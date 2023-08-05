@@ -1,9 +1,7 @@
+import EmailInput from "@/components/EmailInput";
 import PasswordInput from "@/components/PasswordInput";
-import {
-  ArrowRightIcon,
-  AtSignIcon,
-  QuestionMarkIcon,
-} from "@/components/icons";
+import { ArrowRightIcon, QuestionMarkIcon } from "@/components/icons";
+import useValidateEmail from "@/hooks/useValidateEmail";
 import {
   Button,
   Card,
@@ -11,15 +9,14 @@ import {
   CardFooter,
   CardHeader,
   Heading,
-  Input,
-  InputGroup,
-  InputRightElement,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+  const { email, isValid, handleEmailChange } = useValidateEmail();
+
   return (
     <Card h="433px" w="23.75rem" borderRadius="4xl">
       <CardHeader pt={12} px={8}>
@@ -49,13 +46,11 @@ export default function Login() {
             },
           }}
         >
-          <InputGroup size="lg">
-            <Input size="lg" placeholder="informe seu email" type="email" />
-
-            <InputRightElement>
-              <AtSignIcon boxSize={4} color="gray.400" />
-            </InputRightElement>
-          </InputGroup>
+          <EmailInput
+            value={email}
+            onChange={handleEmailChange}
+            isValid={isValid}
+          />
 
           <PasswordInput />
         </VStack>
@@ -66,6 +61,7 @@ export default function Login() {
           size="lg"
           fontWeight="bold"
           rightIcon={<ArrowRightIcon mb={0.5} />}
+          isDisabled={!isValid}
           _hover={{
             backgroundColor: "blue.800",
           }}
