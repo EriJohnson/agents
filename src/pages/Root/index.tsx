@@ -3,7 +3,7 @@ import { Container, Flex, Image } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import buildingIllustration from "@/assets/images/building-illustration.svg";
 
-export default function Login() {
+export default function Root() {
   return (
     <Flex minH="100vh" direction="column" bg="blue.800">
       <Container flex={1} maxW="container.xl">
