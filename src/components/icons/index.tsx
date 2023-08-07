@@ -36,7 +36,7 @@ const EyeOffIcon = (props: IconProps) => (
   </Icon>
 );
 
-const ArrowRightIcon = (props: IconProps) => (
+const LoginIcon = (props: IconProps) => (
   <Icon width="13" height="13" viewBox="0 0 13 13" fill="none" {...props}>
     <path
       d="M10.2375 -0.0003782H2.7625C2.03722 -0.00687753 1.339 0.274651 0.821081 0.782416C0.303161 1.29018 0.00786242 1.98269 0 2.70795L0 4.33295C0 4.47661 0.0570683 4.61439 0.158651 4.71597C0.260233 4.81755 0.398008 4.87462 0.541667 4.87462C0.685326 4.87462 0.823101 4.81755 0.924683 4.71597C1.02627 4.61439 1.08333 4.47661 1.08333 4.33295V2.70795C1.09103 2.26996 1.27214 1.8529 1.58693 1.54827C1.90172 1.24363 2.32449 1.07629 2.7625 1.08296H10.2375C10.6755 1.07629 11.0983 1.24363 11.4131 1.54827C11.7279 1.8529 11.909 2.26996 11.9167 2.70795V10.2913C11.909 10.7293 11.7279 11.1463 11.4131 11.451C11.0983 11.7556 10.6755 11.923 10.2375 11.9163H2.7625C2.32449 11.923 1.90172 11.7556 1.58693 11.451C1.27214 11.1463 1.09103 10.7293 1.08333 10.2913V8.66629C1.08333 8.52263 1.02627 8.38485 0.924683 8.28327C0.823101 8.18169 0.685326 8.12462 0.541667 8.12462C0.398008 8.12462 0.260233 8.18169 0.158651 8.28327C0.0570683 8.38485 0 8.52263 0 8.66629L0 10.2913C0.00786242 11.0166 0.303161 11.7091 0.821081 12.2168C1.339 12.7246 2.03722 13.0061 2.7625 12.9996H10.2375C10.9628 13.0061 11.661 12.7246 12.1789 12.2168C12.6968 11.7091 12.9921 11.0166 13 10.2913V2.70795C12.9921 1.98269 12.6968 1.29018 12.1789 0.782416C11.661 0.274651 10.9628 -0.00687753 10.2375 -0.0003782Z"
@@ -80,7 +80,7 @@ const ProfileIcon = (props: IconProps) => (
   </Icon>
 );
 
-const ArrowLeftIcon = (props: IconProps) => (
+const CornerUpLeftIcon = (props: IconProps) => (
   <Icon width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
     <path
       d="M7.50016 11.6666L3.3335 7.49992M3.3335 7.49992L7.50016 3.33325M3.3335 7.49992H13.3335C14.2176 7.49992 15.0654 7.85111 15.6905 8.47623C16.3156 9.10135 16.6668 9.9492 16.6668 10.8333V16.6666"
@@ -104,14 +104,40 @@ const SearchIcon = (props: IconProps) => (
   </Icon>
 );
 
+const ArrowLeftIcon = (props: IconProps) => (
+  <Icon width="21" height="20" viewBox="0 0 21 20" fill="none" {...props}>
+    <path
+      d="M16.3334 10.0001H4.66675M4.66675 10.0001L10.5001 15.8334M4.66675 10.0001L10.5001 4.16675"
+      stroke="currentColor"
+      strokeWidth="1.67"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Icon>
+);
+
+const ArrowRightIcon = (props: IconProps) => (
+  <Icon width="21" height="20" viewBox="0 0 21 20" fill="none" {...props}>
+    <path
+      d="M4.66675 10.0001H16.3334M16.3334 10.0001L10.5001 4.16675M16.3334 10.0001L10.5001 15.8334"
+      stroke="currentColor"
+      strokeWidth="1.67"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Icon>
+);
+
 export {
   EyeIcon,
   EyeOffIcon,
   AtSignIcon,
-  ArrowRightIcon,
+  LoginIcon,
   QuestionMarkIcon,
   HomeIcon,
   ProfileIcon,
-  ArrowLeftIcon,
+  CornerUpLeftIcon,
   SearchIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
 };

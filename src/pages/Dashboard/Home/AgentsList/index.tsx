@@ -7,6 +7,7 @@ interface AgentsListProps {
 export default function AgentsList({ children }: AgentsListProps) {
   return (
     <Grid
+      w="full"
       templateColumns="repeat(4, 1fr)"
       templateRows="repeat(3, 1fr)"
       gap={2.5}

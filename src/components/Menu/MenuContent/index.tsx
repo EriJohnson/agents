@@ -9,7 +9,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import NavItem from "../NavItem";
-import { ArrowLeftIcon, HomeIcon, ProfileIcon } from "@/components/icons";
+import { CornerUpLeftIcon, HomeIcon, ProfileIcon } from "@/components/icons";
 import { ReactNode } from "react";
 
 interface LinkItemProps {
@@ -64,7 +64,7 @@ export default function MenuContent({ onClose, ...rest }: MenuContent) {
         ))}
       </VStack>
 
-      <NavItem name="Sair" path="/" icon={<ArrowLeftIcon />} />
+      <NavItem name="Sair" path="/" icon={<CornerUpLeftIcon />} />
     </Box>
   );
 }

@@ -1,6 +1,6 @@
 import EmailInput from "@/components/EmailInput";
 import PasswordInput from "@/components/PasswordInput";
-import { ArrowRightIcon, QuestionMarkIcon } from "@/components/icons";
+import { LoginIcon, QuestionMarkIcon } from "@/components/icons";
 import useValidateEmail from "@/hooks/useValidateEmail";
 import {
   Button,
@@ -60,7 +60,7 @@ export default function Login() {
           w="full"
           size="lg"
           fontWeight="bold"
-          rightIcon={<ArrowRightIcon mb={0.5} />}
+          rightIcon={<LoginIcon mb={0.5} />}
           isDisabled={!isValid}
           _hover={{
             backgroundColor: "blue.800",
