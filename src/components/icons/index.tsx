@@ -128,6 +128,42 @@ const ArrowRightIcon = (props: IconProps) => (
   </Icon>
 );
 
+const ChevronDownIcon = (props: IconProps) => (
+  <Icon width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
+    <path
+      d="M5 7.5L10 12.5L15 7.5"
+      stroke="#667085"
+      stroke-width="1.66667"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </Icon>
+);
+
+const ChevronUpIcon = (props: IconProps) => (
+  <Icon width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
+    <path
+      d="M15 12.5L10 7.5L5 12.5"
+      stroke="#667085"
+      strokeWidth="1.66667"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Icon>
+);
+
+const CheckIcon = (props: IconProps) => (
+  <Icon width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
+    <path
+      d="M16.6666 5L7.49992 14.1667L3.33325 10"
+      stroke="currentColor"
+      strokeWidth="1.66667"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Icon>
+);
+
 export {
   EyeIcon,
   EyeOffIcon,
@@ -140,4 +176,7 @@ export {
   SearchIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  CheckIcon,
 };

@@ -67,8 +67,6 @@ function AgentProvider({ children }: { children: React.ReactNode }) {
     });
   }, [agent.stories]);
 
-  console.log(comics);
-
   const value = useMemo(
     () => ({
       agent,

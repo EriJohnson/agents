@@ -2,24 +2,41 @@ import {
   IconButton,
   Input,
   InputGroup,
+  InputProps,
   InputRightElement,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { EyeIcon, EyeOffIcon } from "../icons";
 
-export default function PasswordInput() {
+interface PasswordInputProps extends InputProps {
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function PasswordInput({
+  value,
+  onChange,
+  ...rest
+}: PasswordInputProps) {
   const [isShow, setIsShow] = useState(false);
 
   function toggleVisibility() {
     setIsShow(!isShow);
   }
 
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    onChange(event);
+  }
+
   return (
     <InputGroup size="lg">
       <Input
+        value={value}
+        onChange={handleChange}
         size="lg"
         type={isShow ? "text" : "password"}
         placeholder="informe sua senha"
+        {...rest}
       />
 
       <InputRightElement>

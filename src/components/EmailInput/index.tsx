@@ -3,12 +3,13 @@ import {
   FormErrorMessage,
   Input,
   InputGroup,
+  InputProps,
   InputRightElement,
 } from "@chakra-ui/react";
 import { ChangeEvent } from "react";
 import { AtSignIcon } from "../icons";
 
-interface EmailInputProps {
+interface EmailInputProps extends InputProps {
   value: string;
   isValid?: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -18,6 +19,7 @@ export default function EmailInput({
   value,
   isValid,
   onChange,
+  ...rest
 }: EmailInputProps) {
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     onChange(event);
@@ -40,6 +42,7 @@ export default function EmailInput({
             outline: "none",
             boxShadow: "none",
           }}
+          {...rest}
         />
 
         <InputRightElement>
