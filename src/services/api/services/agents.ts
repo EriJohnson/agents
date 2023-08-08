@@ -37,16 +37,14 @@ const getParams = (searchParams: { page: number; search?: string }) => {
   const params = {
     ...DEFAULT_PARAMS,
     offset,
-    namesStartsWith: searchParams.search,
+    nameStartsWith: searchParams.search,
   };
 
-  for (const key in params) {
-    if (!params[key]) {
-      delete params[key];
-    }
-  }
+  const paramsWithoutEmptyValues = Object.fromEntries(
+    Object.entries(params).filter(([, value]) => value)
+  );
 
-  return params;
+  return paramsWithoutEmptyValues;
 };
 
 const AgentsService = {

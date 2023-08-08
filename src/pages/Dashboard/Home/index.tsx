@@ -21,6 +21,7 @@ export default function Home() {
   );
 
   const currentPage = Number(searchParams.get("page") || 1);
+  const search = searchParams.get("search") || "";
 
   useEffect(() => {
     async function getAgents() {
@@ -28,6 +29,7 @@ export default function Home() {
         setIsLoading(true);
         const response = await AgentsService.findAll({
           page: currentPage || 0,
+          search,
         });
         setAgents(response?.results);
         setPageCount(Math.ceil(response.total / response.limit));
@@ -39,7 +41,7 @@ export default function Home() {
     }
 
     getAgents();
-  }, [currentPage]);
+  }, [search, currentPage]);
 
   function handlePageChange(selectedItem: { selected: number }) {
     const currentPage = String(selectedItem.selected + 1);
@@ -48,12 +50,21 @@ export default function Home() {
   }
 
   const isAgentListVisible = !isLoading && agents.length > 0;
+  const isAgentListEmpty = !isLoading && agents.length === 0;
 
   return (
     <Box p={5} h="full">
       {isLoading && (
         <Center h="full">
           <Spinner color="orange.500" size="xl" />
+        </Center>
+      )}
+
+      {isAgentListEmpty && (
+        <Center h="full">
+          <Box fontSize="xl" color="blue.200">
+            Nenhum agente encontrado...
+          </Box>
         </Center>
       )}
 
