@@ -1,5 +1,5 @@
 import "@fontsource/inter/400.css";
-import "@fontsource/inter/400.css";
+import "@fontsource/inter/600.css";
 
 import "@fontsource/epilogue/300.css";
 import "@fontsource/epilogue/400.css";

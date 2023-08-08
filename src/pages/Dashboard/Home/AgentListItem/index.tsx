@@ -9,14 +9,22 @@ import {
   Text,
   Tooltip,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 
 interface AgentListItemProps {
   agent: Agent;
   index: number;
+  onSelectAgent: (agent: Agent) => void;
 }
 
-export default function AgentListItem({ agent, index }: AgentListItemProps) {
+export default function AgentListItem({
+  agent,
+  index,
+  onSelectAgent,
+}: AgentListItemProps) {
+  function handleSelectAgent() {
+    onSelectAgent(agent);
+  }
+
   return (
     <GridItem colSpan={index >= 8 ? 2 : 1} rowSpan={index >= 8 ? 1 : 1}>
       <Card
@@ -32,8 +40,7 @@ export default function AgentListItem({ agent, index }: AgentListItemProps) {
         pb={4}
         gap="0.875rem"
         borderRadius="2xl"
-        as={Link}
-        to={`/dashboard/agents/${agent.id}`}
+        onClick={handleSelectAgent}
         _hover={{
           bg: "gray.200",
           img: {

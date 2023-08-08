@@ -9,26 +9,33 @@ export default function Paginate({ ...props }: ReactPaginateProps) {
       sx={{
         ".pagination": {
           display: "flex",
+          alignItems: "center",
           listStyle: "none",
-          padding: 0,
-          margin: 0,
+
           li: {
-            padding: "0.5rem 0",
+            display: "flex",
+            alignItems: "center",
             cursor: "pointer",
             border: "1px solid #D0D5DD",
             color: "blue.600",
             fontSize: "sm",
+            boxSize: "40px",
+            position: "relative",
 
             "&:hover": {
-              backgroundColor: "blue.100",
+              backgroundColor: "blue.50",
             },
 
             "&.previous": {
               borderLeftRadius: "0.5rem",
+              width: "118px",
+              height: "40px",
             },
 
             "&.next": {
               borderRightRadius: "0.5rem",
+              width: "118px",
+              height: "40px",
             },
 
             "&.selected": {
@@ -37,7 +44,12 @@ export default function Paginate({ ...props }: ReactPaginateProps) {
             },
 
             a: {
-              padding: "0.5rem 1.25rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+              height: "100%",
+              padding: "0.5rem",
             },
           },
         },

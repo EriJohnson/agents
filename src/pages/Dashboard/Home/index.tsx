@@ -6,6 +6,7 @@ import AgentListItem from "./AgentListItem";
 import AgentsList from "./AgentsList";
 import Paginate from "@/components/Paginate";
 import { useLocation, useNavigate } from "react-router-dom";
+import useAgent from "@/hooks/useAgent";
 
 export default function Home() {
   const [agents, setAgents] = useState<Agent[]>([]);
@@ -14,6 +15,7 @@ export default function Home() {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const { handleSelectAgent } = useAgent();
 
   const searchParams = useMemo(
     () => new URLSearchParams(location.search),
@@ -49,6 +51,11 @@ export default function Home() {
     navigate({ search: searchParams.toString() });
   }
 
+  function onSelectAgent(agent: Agent) {
+    handleSelectAgent(agent);
+    navigate(`/dashboard/profile/${agent.id}`);
+  }
+
   const isAgentListVisible = !isLoading && agents.length > 0;
   const isAgentListEmpty = !isLoading && agents.length === 0;
 
@@ -72,7 +79,12 @@ export default function Home() {
         <VStack spacing="2.75rem">
           <AgentsList>
             {agents.map((agent, index) => (
-              <AgentListItem key={agent.id} agent={agent} index={index} />
+              <AgentListItem
+                key={agent.id}
+                agent={agent}
+                index={index}
+                onSelectAgent={onSelectAgent}
+              />
             ))}
           </AgentsList>
 

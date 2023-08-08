@@ -1,5 +1,10 @@
+import { AgentProvider } from "./contexts/AgentContext";
 import Routes from "./routes";
 
 export default function App() {
-  return <Routes />;
+  return (
+    <AgentProvider>
+      <Routes />
+    </AgentProvider>
+  );
 }

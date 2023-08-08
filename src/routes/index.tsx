@@ -5,6 +5,7 @@ import Root from "@/pages/Root";
 import Login from "@/pages/Login";
 import { Routes as ReactRouterDomRoutes, Route } from "react-router-dom";
 import Home from "@/pages/Dashboard/Home";
+import Profile from "@/pages/Dashboard/Profile";
 
 export default function Routes() {
   return (
@@ -20,7 +21,7 @@ export default function Routes() {
 
       <Route path="/dashboard" element={<Menu />}>
         <Route path="home" element={<Home />} />
-        <Route path="profile" element={<h1>Perfil</h1>} />
+        <Route path="profile/:agentId" element={<Profile />} />
       </Route>
 
       <Route path="*" element={<h1>Not Found</h1>} />

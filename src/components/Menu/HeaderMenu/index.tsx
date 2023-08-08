@@ -17,8 +17,6 @@ export default function HeaderMenu({ ...rest }: FlexProps) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  console.log(location);
-
   const searchParams = useMemo(
     () => new URLSearchParams(location.search),
     [location.search]
