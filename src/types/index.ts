@@ -1,11 +1,3 @@
-export interface Root {
-  offset: number;
-  limit: number;
-  total: number;
-  count: number;
-  results: Agent[];
-}
-
 export interface Agent {
   id: number;
   name: string;
@@ -20,21 +12,11 @@ export interface Agent {
   urls: Url[];
 }
 
-export interface Thumbnail {
-  path: string;
-  extension: string;
-}
-
 export interface Comics {
   available: number;
   collectionURI: string;
   items: Item[];
   returned: number;
-}
-
-export interface Item {
-  resourceURI: string;
-  name: string;
 }
 
 export interface Series {
@@ -44,11 +26,6 @@ export interface Series {
   returned: number;
 }
 
-export interface Item2 {
-  resourceURI: string;
-  name: string;
-}
-
 export interface Stories {
   available: number;
   collectionURI: string;
@@ -56,22 +33,11 @@ export interface Stories {
   returned: number;
 }
 
-export interface Item3 {
-  resourceURI: string;
-  name: string;
-  type: string;
-}
-
 export interface Events {
   available: number;
   collectionURI: string;
   items: Item4[];
   returned: number;
-}
-
-export interface Item4 {
-  resourceURI: string;
-  name: string;
 }
 
 export interface Url {
