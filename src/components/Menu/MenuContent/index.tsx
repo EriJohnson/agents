@@ -1,4 +1,4 @@
-import logo from "@/assets/images/pontua-logo-blue.svg";
+import logo from "@/assets/images/logo.svg";
 import {
   Box,
   BoxProps,
@@ -38,7 +38,7 @@ export default function MenuContent({ onClose, ...rest }: MenuContent) {
       {...rest}
     >
       <Flex align="center" justify="space-between" h={20} py={6} px={7}>
-        <Image src={logo} alt="Logomarca" />
+        <Image src={logo} alt="Logomarca" w="6rem" />
 
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>

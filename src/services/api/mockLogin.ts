@@ -1,4 +1,4 @@
-const db = [{ id: "1", email: "teste@pontua.com.br", password: "123456" }];
+const db = [{ id: "1", email: "teste@agents.com", password: "123456" }];
 
 export const fakeLogin = async (email: string, password: string) => {
   const user = db.find(
